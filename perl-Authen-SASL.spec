@@ -1,20 +1,20 @@
-#
+
 # Conditional build:
-# _without_tests - do not perform "make test"
-#
+%bcond_without	tests	# do not perform "make test"
+
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Authen
 %define		pnam	SASL
 Summary:	Authen::PAM Perl module - SASL Authentication framework
 Summary(pl):	Modu³ Perla Authen::SASL - szkielet autentykacji SASL
 Name:		perl-Authen-SASL
-Version:	2.04
+Version:	2.05
 Release:	1
 Vendor:		Graham Barr <gbarr@pobox.com>
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	ea9ff18439eb949068868369bc2dd802
+# Source0-md5:	4e89ec22947701feb71360972a3b484d
 Patch0:		%{name}-non_existent_man.patch
 BuildRequires:	pam-devel
 BuildRequires:	perl-devel >= 5.6
@@ -43,7 +43,7 @@ wszystkie protoko³y.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
