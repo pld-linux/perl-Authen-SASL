@@ -1,0 +1,13 @@
+--- Authen-SASL-2.02/lib/Authen/SASL.pod.orig	Sun Sep 29 12:27:44 2002
++++ Authen-SASL-2.02/lib/Authen/SASL.pod	Sun Sep 29 12:27:52 2002
+@@ -126,10 +126,6 @@
+ 
+ =back
+ 
+-=head1 SEE ALSO
+-
+-L<Authen::SASL::Perl>
+-
+ =head1 AUTHOR
+ 
+ Graham Barr <gbarr@pobox.com>
