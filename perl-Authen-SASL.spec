@@ -1,7 +1,7 @@
-
+#
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Authen
 %define	pnam	SASL
@@ -11,7 +11,7 @@ Name:		perl-Authen-SASL
 Version:	2.08
 Release:	1
 Vendor:		Graham Barr <gbarr@pobox.com>
-# perl
+# same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
