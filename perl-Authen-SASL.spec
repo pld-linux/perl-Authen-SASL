@@ -13,7 +13,7 @@ Release:	1
 Vendor:		Graham Barr <gbarr@pobox.com>
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-non_existent_man.patch
 BuildRequires:	pam-devel
 BuildRequires:	perl >= 5.6
