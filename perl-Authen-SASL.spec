@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Authen
 %define		pnam	SASL
-Summary:	Authen::PAM Perl module - SASL Authentication framework
+Summary:	Authen::SASL Perl module - SASL authentication framework
 Summary(pl):	Modu³ Perla Authen::SASL - szkielet autentykacji SASL
 Name:		perl-Authen-SASL
 Version:	2.07
