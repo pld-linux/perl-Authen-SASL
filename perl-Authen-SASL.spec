@@ -11,7 +11,8 @@ Name:		perl-Authen-SASL
 Version:	2.07
 Release:	1
 Vendor:		Graham Barr <gbarr@pobox.com>
-License:	GPL or Artistic
+# perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	e90446c6cc1f6fb9e69c91da4708825e
