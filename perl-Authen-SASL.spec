@@ -9,7 +9,7 @@ Summary:	Authen::SASL Perl module - SASL authentication framework
 Summary(pl):	Modu³ Perla Authen::SASL - szkielet autentykacji SASL
 Name:		perl-Authen-SASL
 Version:	2.07
-Release:	1
+Release:	2
 Vendor:		Graham Barr <gbarr@pobox.com>
 # perl
 License:	GPL v1+ or Artistic
