@@ -9,7 +9,7 @@ Summary:	Authen::PAM Perl module - SASL Authentication framework
 Summary(pl):	Modu³ Perla Authen::SASL - szkielet autentykacji SASL
 Name:		perl-Authen-SASL
 Version:	2.03
-Release:	1
+Release:	2
 Vendor:		Graham Barr <gbarr@pobox.com>
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
@@ -17,7 +17,7 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version
 Patch0:		%{name}-non_existent_man.patch
 BuildRequires:	pam-devel
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 # earlier perl-ldap contain own Authen::SASL
 Conflicts:	perl-ldap < 0.26
 BuildArch:	noarch
@@ -39,7 +39,8 @@ wszystkie protoko³y.
 %patch -p1
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 %{!?_without_tests:%{__make} test}
 
@@ -54,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog api.txt
-%dir %{perl_sitelib}/Authen/SASL
-%{perl_sitelib}/Authen/SASL.pm
-%{perl_sitelib}/Authen/SASL/*
+%dir %{perl_vendorlib}/Authen/SASL
+%{perl_vendorlib}/Authen/SASL.pm
+%{perl_vendorlib}/Authen/SASL/*
 %{_mandir}/man3/*
