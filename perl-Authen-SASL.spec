@@ -8,18 +8,19 @@
 Summary:	Authen::SASL Perl module - SASL authentication framework
 Summary(pl):	Modu³ Perla Authen::SASL - szkielet autentykacji SASL
 Name:		perl-Authen-SASL
-Version:	2.09
+Version:	2.10
 Release:	1
-Vendor:		Graham Barr <gbarr@pobox.com>
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	e11b60f58850ff6e71e6e1813c1f5e31
+# Source0-md5:	041ce912640c5dff626a91435a359b88
+URL:		http://search.cpan.org/dist/Authen-SASL/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Digest-HMAC
+BuildRequires:	perl-GSSAPI
 %endif
 # earlier perl-ldap contain own Authen::SASL
 Conflicts:	perl-ldap < 0.26
@@ -51,6 +52,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/Authen/SASL.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
