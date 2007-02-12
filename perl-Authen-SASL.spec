@@ -6,7 +6,7 @@
 %define		pdir	Authen
 %define		pnam	SASL
 Summary:	Authen::SASL Perl module - SASL authentication framework
-Summary(pl):	Modu³ Perla Authen::SASL - szkielet autentykacji SASL
+Summary(pl.UTF-8):   ModuÅ‚ Perla Authen::SASL - szkielet autentykacji SASL
 Name:		perl-Authen-SASL
 Version:	2.10
 Release:	1
@@ -32,11 +32,11 @@ SASL is a generic mechanism for authentication used by several network
 protocols. Authen::SASL provides an implementation framework that all
 protocols should be able to share.
 
-%description -l pl
-SASL jest ogólnym mechanizmem autentykacji wykorzystywanym przez
-niektóre protoko³y sieciowe. Authen::SASL udostêpnia szkielet
-implementacji, który powinien dawaæ mo¿liwo¶æ wspó³dzielenia go przez
-wszystkie protoko³y.
+%description -l pl.UTF-8
+SASL jest ogÃ³lnym mechanizmem autentykacji wykorzystywanym przez
+niektÃ³re protokoÅ‚y sieciowe. Authen::SASL udostÄ™pnia szkielet
+implementacji, ktÃ³ry powinien dawaÄ‡ moÅ¼liwoÅ›Ä‡ wspÃ³Å‚dzielenia go przez
+wszystkie protokoÅ‚y.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
