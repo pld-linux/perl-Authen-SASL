@@ -6,7 +6,7 @@
 %define		pdir	Authen
 %define		pnam	SASL
 Summary:	Authen::SASL Perl module - SASL authentication framework
-Summary(pl.UTF-8):   Moduł Perla Authen::SASL - szkielet autentykacji SASL
+Summary(pl.UTF-8):	Moduł Perla Authen::SASL - szkielet autentykacji SASL
 Name:		perl-Authen-SASL
 Version:	2.10
 Release:	1
