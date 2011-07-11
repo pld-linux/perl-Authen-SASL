@@ -8,13 +8,13 @@
 Summary:	Authen::SASL Perl module - SASL authentication framework
 Summary(pl.UTF-8):	Moduł Perla Authen::SASL - szkielet autentykacji SASL
 Name:		perl-Authen-SASL
-Version:	2.13
+Version:	2.1401
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a222f9eecb03919cdff8c7cdca23ba32
+# Source0-md5:	6f25b75af1f44bf1078e0fdb4a2f73af
 URL:		http://search.cpan.org/dist/Authen-SASL/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
