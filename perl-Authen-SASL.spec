@@ -8,19 +8,21 @@
 Summary:	Authen::SASL Perl module - SASL authentication framework
 Summary(pl.UTF-8):	Moduł Perla Authen::SASL - szkielet autentykacji SASL
 Name:		perl-Authen-SASL
-Version:	2.1401
+Version:	2.1600
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	6f25b75af1f44bf1078e0fdb4a2f73af
+Source0:	http://www.cpan.org/modules/by-module/Authen/%{pdir}-%{pnam}-2.16.tar.gz
+# Source0-md5:	7c03a689d4c689e5a9e2f18a1c586b2f
 URL:		http://search.cpan.org/dist/Authen-SASL/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Digest-HMAC
+BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-GSSAPI
+BuildRequires:	perl-Test-Simple
 %endif
 # earlier perl-ldap contain own Authen::SASL
 Conflicts:	perl-ldap < 0.26
@@ -39,7 +41,7 @@ implementacji, który powinien dawać możliwość współdzielenia go przez
 wszystkie protokoły.
 
 %prep
-%setup -q -n %{pdir}-%{pnam}-%{version}
+%setup -q -n %{pdir}-%{pnam}-2.16
 
 %build
 %{__perl} Makefile.PL \
@@ -53,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/Authen/SASL.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/Authen/SASL.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -61,7 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes api.txt
-%dir %{perl_vendorlib}/Authen/SASL
 %{perl_vendorlib}/Authen/SASL.pm
-%{perl_vendorlib}/Authen/SASL/*
-%{_mandir}/man3/*
+%{perl_vendorlib}/Authen/SASL
+%{_mandir}/man3/Authen::SASL*.3pm*
