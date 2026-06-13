@@ -12,7 +12,7 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Authen/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	https://www.cpan.org/modules/by-authors/id/E/EH/EHUELS/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	b4bfe550c072f253d2f85b9bc0f753a0
 URL:		http://search.cpan.org/dist/Authen-SASL/
 BuildRequires:	perl-devel >= 1:5.8.0
