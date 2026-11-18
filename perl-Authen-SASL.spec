@@ -1,11 +1,11 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	Authen
 %define		pnam	SASL
 Summary:	Authen::SASL Perl module - SASL authentication framework
-Summary(pl.UTF-8):	Moduł Perla Authen::SASL - szkielet autentykacji SASL
+Summary(pl.UTF-8):	Moduł Perla Authen::SASL - szkielet uwierzytelniania SASL
 Name:		perl-Authen-SASL
 Version:	2.2100
 Release:	1
@@ -14,14 +14,17 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/modules/by-authors/id/E/EH/EHUELS/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	4476f347a4ea45a7e0d3067da83ed29c
-URL:		http://search.cpan.org/dist/Authen-SASL/
-BuildRequires:	perl-devel >= 1:5.8.0
+URL:		https://metacpan.org/dist/Authen-SASL
+BuildRequires:	perl-ExtUtils-MakeMaker
+BuildRequires:	perl-devel >= 1:5.14.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Crypt-URandom
 BuildRequires:	perl-Digest-HMAC
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-GSSAPI
+BuildRequires:	perl-Test-Pod >= 1.41
+BuildRequires:	perl-Test-Pod-Coverage
 BuildRequires:	perl-Test-Simple
 %endif
 # earlier perl-ldap contain own Authen::SASL
@@ -35,7 +38,7 @@ protocols. Authen::SASL provides an implementation framework that all
 protocols should be able to share.
 
 %description -l pl.UTF-8
-SASL jest ogólnym mechanizmem autentykacji wykorzystywanym przez
+SASL jest ogólnym mechanizmem uwierzytelniania wykorzystywanym przez
 niektóre protokoły sieciowe. Authen::SASL udostępnia szkielet
 implementacji, który powinien dawać możliwość współdzielenia go przez
 wszystkie protokoły.
@@ -46,8 +49,12 @@ wszystkie protokoły.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
+
 %{__make}
-%{?with_tests:%{__make} test}
+
+%if %{with tests}
+%{__make} test
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
