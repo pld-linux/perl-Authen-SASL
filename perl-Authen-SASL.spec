@@ -18,6 +18,7 @@ URL:		https://metacpan.org/dist/Authen-SASL
 BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-devel >= 1:5.14.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl-Crypt-URandom
 BuildRequires:	perl-Digest-HMAC
